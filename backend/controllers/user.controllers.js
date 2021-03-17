@@ -5,11 +5,16 @@ const { User } = require("../models");
 const userCtrl = {};
 
 userCtrl.pruebas = async (req, res) => {
+    console.log("Hola Registrar User");
 	res.status(200).send({
 		massage: "Probando controlador User ffer",
 	});
 }
 
+userCtrl.getUser = async( req , res ) =>{
+    const user = await User.find();
+    res.json(user);   
+};
 
 userCtrl.saveUser = async ( req , res ) =>{
 
@@ -37,50 +42,37 @@ userCtrl.saveUser = async ( req , res ) =>{
         res.json(user);   
     }  
 
-
-/*     const params = req.body;
-
-    const user = new User ({
-        nombre:  params.nombre,
-        apellido: params.apellido,
-        email:   params.email,
-        password: params.password,
-        rol: 'ROL_USER',
-        foto: 'null'
-    });
-
-    console.log(params); */
-
-/*     const query = await User.findOne({ 'email': req.body. email});
-    
-    if(query){                       
-        res.status(404).send({message:'Este correo ya se encuentra registrado. Ingrese otro nuevamente'});
-    }        
-    else {
-        await user.save();    
-        res.json(user);   
-    }    */     
 };
 
 
-/* UserCtrl.getActivities = async (req, res) => {
-	let activities = await User.find();
+userCtrl.logingUser = async( req , res ) =>{    
+    console.log(`Contraseña enviada es : ${req.body.password}`);
+      
+      const email = req.body.email;
+      const password = req.body.password;
 
-	let subjectId = req.params.subject;
+      //const user = await User.find();
+      const query = await User.findOne({ 'email': req.body. email});
 
-	console.log("Subject Id = " + subjectId);
+      console.log(`query igual :  ${query}`);
 
-	let find = User.find({ subject: subjectId })
-		.populate("subject")
-		.exec()
-		.then((doc) => {
-			console.log(doc);
-			res.status(200).json(doc);
-		})
-		.catch((err) => {
-			console.log(err);
-			res.status(500).json({ error: err });
-		});
-}; */
+      if(query){
+
+        if(password==query.password){          
+            console.log(`Datos del Usuario correponde a: ${query}`);      
+            res.status(200).send(query);       
+            //res.json(query);
+          }
+          else{            
+            res.status(404).send({message:'Contraseña incorrecta...'});
+          }            
+
+      }else{
+        res.status(404).send({message:'El correo no se encuentra registrado...'});
+      }
+
+     
+};
+
 
 module.exports = userCtrl;

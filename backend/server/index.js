@@ -10,6 +10,9 @@ server.use(cors());
 
 
 let user_routes = require("../routes/user.routes");
+let cliente_routes = require("../routes/cliente.routes");
+
 server.use("/api/usuario", user_routes);
+server.use("/api/cliente", cliente_routes);
 
 module.exports = server;
