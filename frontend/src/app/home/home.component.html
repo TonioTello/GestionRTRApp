@@ -1,1 +1,79 @@
-<p>home works!</p>
+<div class="row">
+  <div class="left" style="background-color:#bbb;">
+    <h2>Menu</h2>
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+    <ul id="myMenu">
+      <li>
+          <mat-expansion-panel >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p><i class="fa fa-fw fa-home"></i> Home</p>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+          </mat-expansion-panel>
+      </li>
+
+      <li>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <p><i class="fa fa-fw fa-wrench"></i> Servicios</p>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p><a href="#crearServicio"><i class="fa fa-fw fa-pencil-square-o"></i> Crear servicio</a></p>
+          <p><a href="#cronograma"><i class="fa fa-fw fa-calendar"></i> Cronograma</a></p>
+          <p><a href="#historialServicio"><i class="fa fa-archive"></i> Historial servicios</a></p>
+        </mat-expansion-panel>
+      </li>
+
+      <li>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <p><i class="fa fa-fw fa-connectdevelop"></i> Equipos</p>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p><a href="#registrarEquipo"><i class="fa fa-fw fa-pencil-square-o"></i> Registrar equipo</a></p>
+          <p><a href="#stockEquipo"><i class="fa fa-fw fa-bars"></i> Stock de equipos</a></p>
+        </mat-expansion-panel>
+      </li>
+
+      <li>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <p><i class="fa fa-fw fa-user"></i> Clientes </p>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p><a href="#equiposCliente"><i class="fa fa-fw fa-connectdevelop"></i> Equipos</a></p>
+          <p><a href="#serviciosCliente"><i class="fa fa-fw fa-wrench"></i> Servicios</a></p>
+        </mat-expansion-panel>
+      </li>
+
+      <li>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <p><i class="fa fa-fw fa-money"></i> Ventas</p>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p><a href="#registrarVenta"><i class="fa fa-fw fa-pencil-square-o"></i> Registrar venta</a></p>
+          <p><a href="#historialVentas"><i class="fa fa-fw fa-archive"></i> Historial ventas</a></p>
+        </mat-expansion-panel>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="right" style="background-color:#ddd;">
+    <h2>Page Content</h2>
+    <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
+    <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+    <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+    <p>Some text..</p>
+  </div>
+</div>
+
+
+
+
