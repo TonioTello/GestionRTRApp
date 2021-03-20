@@ -1,0 +1,85 @@
+<h2 style="text-align: center;">Creación de Servicio</h2>
+<form class="row g-3">
+<br>
+  <h4>Información del Equipo</h4>
+  <div class="col-12">  <!--imprime una nueva linea¡? -->
+  </div>
+  <div class="col-md-6">
+    <label for="inputAddress2" class="form-label">Identificación del Equipo</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Identificación del Equipo">
+  </div>
+  <div class="col-md-6">
+    <label for="inputAddress2" class="form-label">Nombre del equipo</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Nombre del equipo">
+  </div>
+  <h4>Información del Cliente</h4>
+  <div class="col-12">
+    <label for="inputAddress2" class="form-label">Nombre cliente/empresa</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Nombre cliente/empresa">
+  </div>
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Ciudad</label>
+    <input type="text" class="form-control" id="inputEmail4" placeholder="Ciudad">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Dirección</label>
+    <input type="text" class="form-control" id="inputPassword4" placeholder="Dirección">
+  </div>
+  <h4>Quien notifica</h4>
+  <div class="col-12">
+    <label for="inputAddress2" class="form-label">Nombre completo</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Nombre completo">
+  </div>
+  <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Cargo</label>
+    <input type="text" class="form-control" id="inputEmail4" placeholder="Cargo">
+  </div>
+  <div class="col-md-4">
+    <label for="inputPassword4" class="form-label">Teléfono</label>
+    <input type="text" class="form-control" id="inputPassword4" placeholder="Teléfono">
+  </div>
+  <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Email</label>
+    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+  </div>
+  <h4>Información del servicio</h4>
+  <div class="col-12">  <!--imprime una nueva linea¡? -->
+  </div>
+  <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Fecha de servicio</label>
+    <br>
+    <mat-form-field appearance="fill">
+    <!-- #docregion toggle -->
+      <input matInput [matDatepicker]="picker" placeholder="Fecha de servicio">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    <!-- #enddocregion toggle -->
+    </mat-form-field>
+  </div>
+  <div class="col-md-4">
+    <label for="inputPassword4" class="form-label">Tipo de servicio</label>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Tipo de servicio</mat-label>
+      <mat-select [(value)]="selected">
+        <mat-option value="option1">Revisión o diagnóstico</mat-option>
+        <mat-option value="option2">Mantenimiento preventivo</mat-option>
+        <mat-option value="option3">Mantenimiento correctivo</mat-option>
+        <mat-option value="option4">Capacitación</mat-option>
+
+
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col-md-4"> <!--imprime 3 bloque vacio? -->
+  </div>
+  <div class="col-md-12">
+    <label for="inputEmail4" class="form-label">Observaciones</label>
+    <input type="text" class="form-control" id="inputEmail4" placeholder="Observaciones">
+  </div>
+  <br>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="submit" class="btn btn-primary">Cancelar</button>
+  </div>
+</form>

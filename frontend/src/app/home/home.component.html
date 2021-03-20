@@ -1,79 +1,107 @@
-<div class="row">
-  <div class="left" style="background-color:#bbb;">
-    <h2>Menu</h2>
-    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
-    <ul id="myMenu">
-      <li>
+<mat-drawer-container class="example-container">
+  <mat-drawer class="side-container" mode="side" opened>
+      <h2>Menu</h2>
+      <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+      <ul id="myMenu">
+        <li>
+            <mat-expansion-panel hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <p><i class="fa fa-fw fa-home"></i> Home</p>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+            </mat-expansion-panel>
+        </li>
+
+        <li>
           <mat-expansion-panel >
             <mat-expansion-panel-header>
               <mat-panel-title>
-                <p><i class="fa fa-fw fa-home"></i> Home</p>
+                <p><i class="fa fa-fw fa-wrench"></i> Servicios</p>
               </mat-panel-title>
             </mat-expansion-panel-header>
+            <p><a (click)="onCrearServicio()"><i class="fa fa-fw fa-pencil-square-o"></i> Crear servicio</a></p>
+            <p><a (click)="onCronograma()"><i class="fa fa-fw fa-calendar"></i> Cronograma</a></p>
           </mat-expansion-panel>
-      </li>
+        </li>
 
-      <li>
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <p><i class="fa fa-fw fa-wrench"></i> Servicios</p>
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <p><a href="#crearServicio"><i class="fa fa-fw fa-pencil-square-o"></i> Crear servicio</a></p>
-          <p><a href="#cronograma"><i class="fa fa-fw fa-calendar"></i> Cronograma</a></p>
-          <p><a href="#historialServicio"><i class="fa fa-archive"></i> Historial servicios</a></p>
-        </mat-expansion-panel>
-      </li>
+        <li>
+          <mat-expansion-panel >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p><i class="fa fa-fw fa-connectdevelop"></i> Equipos</p>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p><a (click)="onRegistrarEquipo()"><i class="fa fa-fw fa-pencil-square-o"></i> Registrar equipo</a></p>
+            <p><a (click)="onStockEquipos()"><i class="fa fa-fw fa-bars"></i> Stock de equipos</a></p>
+          </mat-expansion-panel>
+        </li>
 
-      <li>
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <p><i class="fa fa-fw fa-connectdevelop"></i> Equipos</p>
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <p><a href="#registrarEquipo"><i class="fa fa-fw fa-pencil-square-o"></i> Registrar equipo</a></p>
-          <p><a href="#stockEquipo"><i class="fa fa-fw fa-bars"></i> Stock de equipos</a></p>
-        </mat-expansion-panel>
-      </li>
+        <li>
+          <mat-expansion-panel >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p><i class="fa fa-fw fa-user"></i> Clientes </p>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p><a (click)="onRegistrarCliente()"><i class="fa fa-fw fa-connectdevelop"></i> Registrar Cliente</a></p>
+          </mat-expansion-panel>
+        </li>
 
-      <li>
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <p><i class="fa fa-fw fa-user"></i> Clientes </p>
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <p><a href="#equiposCliente"><i class="fa fa-fw fa-connectdevelop"></i> Equipos</a></p>
-          <p><a href="#serviciosCliente"><i class="fa fa-fw fa-wrench"></i> Servicios</a></p>
-        </mat-expansion-panel>
-      </li>
+        <li>
+          <mat-expansion-panel >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p><i class="fa fa-fw fa-money"></i>Ventas</p>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p><a (click)="onRegistrarVenta()"><i class="fa fa-fw fa-pencil-square-o"></i> Registrar venta</a></p>
+            <p><a (click)="onHistorialVentas()"><i class="fa fa-fw fa-archive"></i> Historial ventas</a></p>
+          </mat-expansion-panel>
+        </li>
 
-      <li>
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <p><i class="fa fa-fw fa-money"></i> Ventas</p>
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <p><a href="#registrarVenta"><i class="fa fa-fw fa-pencil-square-o"></i> Registrar venta</a></p>
-          <p><a href="#historialVentas"><i class="fa fa-fw fa-archive"></i> Historial ventas</a></p>
-        </mat-expansion-panel>
-      </li>
+      </ul>
+  </mat-drawer>
+  <mat-drawer-content>
+      <!-- Contenido right 85%-->
+      <div *ngIf="selectedTabview == 0" class="right_content" style="background-color:#ddd;">
+        <h2>Page Content</h2>
+        <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
+        <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+        <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+        <p>Some text..</p>
+      </div>
+      <div *ngIf="selectedTabview == 1" class="right_content" style="background-color:#ddd;">
+        <app-crear-servicio></app-crear-servicio>
+      </div>
+      <div *ngIf="selectedTabview == 2" class="right_content" style="background-color:#ddd;">
+        <app-cronograma></app-cronograma>
+      </div>
+      <div *ngIf="selectedTabview == 3" class="right_content" style="background-color:#ddd;">
+        <app-registrar-equipo></app-registrar-equipo>
+      </div>
+      <div *ngIf="selectedTabview == 4" class="right_content" style="background-color:#ddd;">
+        <app-stock-equipos></app-stock-equipos>
+      </div>
+      <div *ngIf="selectedTabview == 5" class="right_content" style="background-color:#ddd;">
+        <app-registrar-cliente></app-registrar-cliente>>
+      </div>
+      <div *ngIf="selectedTabview == 6" class="right_content" style="background-color:#ddd;">
+        <app-registrar-venta></app-registrar-venta>>
+      </div>
+      <div *ngIf="selectedTabview == 7" class="right_content" style="background-color:#ddd;">
+        <app-historial-ventas></app-historial-ventas>
+      </div>
+  </mat-drawer-content>
 
-    </ul>
-  </div>
-
-  <div class="right" style="background-color:#ddd;">
-    <h2>Page Content</h2>
-    <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
-    <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
-    <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
-    <p>Some text..</p>
-  </div>
-</div>
+</mat-drawer-container>
 
 
+<!-- <p><a routerLink="/crear-servicio" href="#crearServicio"><i class="fa fa-fw fa-pencil-square-o"></i> Crear servicio</a></p>
+<p><a routerLink="/cronograma" href="#cronograma"><i class="fa fa-fw fa-calendar"></i> Cronograma</a></p>
+<p><a routerLink="/historial-servicios" href="#historialServicio"><i class="fa fa-archive"></i> Historial servicios</a></p>
 
+          <p><a routerLink="/registrar-equipo" href="#registrarEquipo"><i class="fa fa-fw fa-pencil-square-o"></i> Registrar equipo</a></p>
+          <p><a routerLink="/stock-equipo" href="#stockEquipo"><i class="fa fa-fw fa-bars"></i> Stock de equipos</a></p>
 
+-->

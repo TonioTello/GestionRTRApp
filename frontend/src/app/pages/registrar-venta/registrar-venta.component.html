@@ -1,0 +1,92 @@
+<h2 style="text-align: center;">Registro de Venta</h2>
+<form class="row g-3">
+<br>
+  <h4>Información de venta</h4>
+  <div class="col-12">  <!--imprime una nueva linea¡? -->
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputAddress2" class="form-label">Numero Factura</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Numero Factura">
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputAddress2" class="form-label">Cliente</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Cliente">
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputAddress2" class="form-label">Vendedor</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Vendedor">
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputAddress2" class="form-label">Marca</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Marca">
+  </div>
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Número serie del equipo</label>
+    <input type="text" class="form-control" id="inputEmail4" placeholder="Número serie del equipo">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Garantía</label>
+    <input type="text" class="form-control" id="inputPassword4" placeholder="Garantía">
+  </div>
+
+  <br>
+  <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Fecha de venta</label>
+    <br>
+    <mat-form-field appearance="fill">
+    <!-- #docregion toggle -->
+      <input matInput [matDatepicker]="picker" placeholder="Fecha de venta">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    <!-- #enddocregion toggle -->
+    </mat-form-field>
+  </div>
+
+  <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Fecha de Instalación</label>
+    <br>
+    <mat-form-field appearance="fill">
+    <!-- #docregion toggle -->
+      <input matInput [matDatepicker]="picker" placeholder="Fecha de Instalación">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    <!-- #enddocregion toggle -->
+    </mat-form-field>
+  </div>
+
+  <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Periodo de mantenimiento</label>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Periodo de mantenimiento</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate placeholder="Start date">
+        <input matEndDate placeholder="End date">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+  </div>
+
+
+
+
+  <div class="col-12">
+    <label for="inputPassword4" class="form-label">Responsable del servicio </label>
+    <input type="text" class="form-control" id="inputPassword4" placeholder="Responsable del servicio ">
+  </div>
+
+  <div class="col-12">
+    <label for="inputEmail4" class="form-label">Observaciones</label>
+    <input type="text" class="form-control" id="inputEmail4" placeholder="Observaciones">
+  </div>
+  <br>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="submit" class="btn btn-primary">Cancelar</button>
+  </div>
+</form>

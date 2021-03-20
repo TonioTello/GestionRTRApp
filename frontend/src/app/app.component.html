@@ -1,18 +1,21 @@
 <!-- nav -->
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="">
+<!-- <nav class="navbar navbar-expand navbar-dark bg-dark" >
   <div class="navbar-nav">
       <a class="nav-item nav-link">Home</a>
       <a class="nav-item nav-link" >Logout</a>
   </div>
-</nav>
+</nav> -->
 
 <!-- main app container -->
-<div class="jumbotron">
-              <!-- <alert></alert> -->
-              <router-outlet></router-outlet>
 
+<div class="topnav">
+  <div class="topnav-right">
+    <a href="#search">Home</a>
+    <a href="#about">Logout</a>
+  </div>
 </div>
 
+<router-outlet></router-outlet>
 
 <!--
   <div class="jumbotron">

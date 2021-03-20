@@ -29,7 +29,6 @@
 
 /* Left column (menu) */
 .left {
-  flex: 15%;
   padding: 15px 0;
 }
 
@@ -38,8 +37,7 @@
 }
 
 /* Right column (page content) */
-.right {
-  flex: 85%;
+.right_content {
   padding: 15px;
 }
 
@@ -69,3 +67,26 @@
 }
 
 /*Normal*/
+
+.example-viewport {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.example-dt {
+  height: 30px;
+  font-weight: bold;
+}
+
+.example-dd {
+  height: 30px;
+}
+
+.example-container {
+  position: fixed;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  min-width: 100%;
+}

@@ -1,0 +1,73 @@
+<h2 style="text-align: center;">Registro de Equipos Nuevos</h2>
+<form class="row g-3">
+<br>
+  <h4>Información del Equipo</h4>
+  <div class="col-12">  <!--imprime una nueva linea¡? -->
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputAddress2" class="form-label">Nombre del equipo</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Nombre del equipo">
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputAddress2" class="form-label">Marca</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Marca">
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputAddress2" class="form-label">Número de serie</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Número de serie">
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputAddress2" class="form-label">País fabricación</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="País fabricación">
+  </div>
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Registro Invima</label>
+    <input type="text" class="form-control" id="inputEmail4" placeholder="Registro Invima">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Garantía</label>
+    <input type="text" class="form-control" id="inputPassword4" placeholder="Garantía">
+  </div>
+  <div class="col-md-6">
+    <label for="inputAddress2" class="form-label">Responsable recibe</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Responsable recibe">
+  </div>
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Proveedor</label>
+    <input type="text" class="form-control" id="inputEmail4" placeholder="Proveedor">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Contacto</label>
+    <input type="text" class="form-control" id="inputPassword4" placeholder="Contacto">
+  </div>
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Email</label>
+    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Fecha compra</label>
+    <br>
+    <mat-form-field appearance="fill">
+    <!-- #docregion toggle -->
+      <input matInput [matDatepicker]="picker" placeholder="Fecha compra">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    <!-- #enddocregion toggle -->
+    </mat-form-field>
+  </div>
+
+  <div class="col-md-12">
+    <label for="inputEmail4" class="form-label">Observaciones</label>
+    <input type="text" class="form-control" id="inputEmail4" placeholder="Observaciones">
+  </div>
+  <br>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="submit" class="btn btn-primary">Cancelar</button>
+  </div>
+</form>
