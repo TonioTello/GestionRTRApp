@@ -16,6 +16,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onHome(){
+    this.selectedTabview = 0;
+  }
+
   onCrearServicio() {
     this.selectedTabview = 1;
   }

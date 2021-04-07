@@ -7,7 +7,7 @@
             <mat-expansion-panel hideToggle>
               <mat-expansion-panel-header>
                 <mat-panel-title>
-                  <p><i class="fa fa-fw fa-home"></i> Home</p>
+                  <a (click)="onHome()"><p><i class="fa fa-fw fa-home"></i> Home</p></a>
                 </mat-panel-title>
               </mat-expansion-panel-header>
             </mat-expansion-panel>
@@ -64,12 +64,38 @@
   </mat-drawer>
   <mat-drawer-content>
       <!-- Contenido right 85%-->
-      <div *ngIf="selectedTabview == 0" class="right_content" style="background-color:#ddd;">
-        <h2>Page Content</h2>
-        <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
-        <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
-        <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
-        <p>Some text..</p>
+      <div *ngIf="selectedTabview == 0" class="right_content" style="background-color:#f7f7f7;">
+        <div class="jumbotron">
+          <h1 class="display-4">BIENVENIDOS GESTIÓN RTR!!</h1>
+          <p class="lead">R.T.R MEDICAL es una empresa especializada en la prestación de servicios asociados como lo son asesorías y mantenimiento correctivo-preventivo.</p>
+          <hr class="my-4">
+          <p class="lead">La aplicación <strong><b>Gestión RTR</b></strong> permite la captura de información y realizar el registro de
+            inventario e información relevante de los diferentes dispositivos biomédicos,
+            tanto en el cliente como de los que se tienen en stock.</p>
+          <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+          </p>
+        </div>
+
+        <div class="row" >
+          <div class="col-sm-4" >
+                <img src="../../assets/logo2.jpeg" class="img-responsive" style="width:50%" alt="Image">
+          </div>
+
+          <div class="col-sm-8">
+              <h2><i class="fa fa-fw fa-pencil-square-o"></i>Servicios </h2>
+              <ul class="list-group list-group-flush" style="background-color:#f7f7f7;">
+                <li class="list-group-item" style="background-color:#f7f7f7;" ><i class="fa fa-fw fa-asterisk"></i>Mantenimiento preventivo </li>
+                <li class="list-group-item" style="background-color:#f7f7f7;"><i class="fa fa-fw fa-asterisk"></i>Mantenimiento correctivo </li>
+                <li class="list-group-item" style="background-color:#f7f7f7;"><i class="fa fa-fw fa-asterisk"></i>Solicitudes de servicios </li>
+                <li class="list-group-item" style="background-color:#f7f7f7;"><i class="fa fa-fw fa-asterisk"></i>Capacitaciones</li>
+                <li class="list-group-item" style="background-color:#f7f7f7;"><i class="fa fa-fw fa-asterisk"></i>Asesorías </li>
+              </ul>
+          </div>
+
+
+  </div>
+
       </div>
       <div *ngIf="selectedTabview == 1" class="right_content" style="background-color:#ddd;">
         <app-crear-servicio></app-crear-servicio>
