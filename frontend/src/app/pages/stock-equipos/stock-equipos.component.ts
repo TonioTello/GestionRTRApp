@@ -1,47 +1,53 @@
 import { Component, OnInit } from '@angular/core';
+import {Equipo} from '../../_models'
+import { EquipoService } from './../../_services';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-  {position: 11, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 12, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 13, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 14, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 15, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 16, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 17, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 18, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 19, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 20, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
+declare let  M: any; //Mostrar mensaje usuando materialize
+
 
 @Component({
   selector: 'app-stock-equipos',
   templateUrl: './stock-equipos.component.html',
-  styleUrls: ['./stock-equipos.component.css']
+  styleUrls: ['./stock-equipos.component.css'],
+  providers:[EquipoService]
 })
 export class StockEquiposComponent implements OnInit {
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  equipos : Equipo[];
 
-  constructor() { }
+  displayedColumns: string[] = ['posicion', 'nombre', 'serial', 'marca', 'modelo', 'cant_disponible'];
+
+  constructor(private _equipoService : EquipoService) {
+    this.equipos = [];
+   }
 
   ngOnInit(): void {
+
+    //dataSource = equipos;
+
+    this._equipoService.getEquipos()
+    .subscribe(
+        res => {
+          this.equipos = res as Equipo[];
+         // M.toast({html: 'Empleado Guardado Exitosamente...'});
+          console.log(res);
+        },
+        error=>{
+/*           let errorMessage = <any> error;
+          if(errorMessage != null){
+            this.errorMessage = error.error.message;
+            console.log(error.error.message);
+          } */
+
+          console.log(error.error.message);
+
+        }
+      );
+
+
+      console.log("Equipos en el backend");
+      console.log(this.equipos);
+
   }
 
 }

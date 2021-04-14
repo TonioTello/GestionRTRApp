@@ -3,13 +3,16 @@ const { Schema } = mongoose;
 
 const ClienteSchema = new Schema({
 	nit: { type: String },
-    nombre: { type: String },
-    apellido: { type: String },
+    nombreRepresentante: { type: String },
+    nombreContacto: { type: String },
     empresa: { type: String },
 	ciudad: { type: String },	
-    telefono: { type: String },
-    email: { type: String },
+    telefono1: { type: String },
+    email1: { type: String },
+    telefono2: { type: String },
+    email2: { type: String },
     direccion: { type: String },
+    observaciones: { type: String },
     
 });
 

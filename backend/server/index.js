@@ -11,8 +11,14 @@ server.use(cors());
 
 let user_routes = require("../routes/user.routes");
 let cliente_routes = require("../routes/cliente.routes");
+let equipo_routes = require("../routes/equipo.routes");
+let servicio_routes = require("../routes/servicio.routes");
+let venta_routes = require("../routes/venta.routes");
 
 server.use("/api/usuario", user_routes);
 server.use("/api/cliente", cliente_routes);
+server.use("/api/equipo", equipo_routes);
+server.use("/api/servicio", servicio_routes);
+server.use("/api/venta", venta_routes);
 
 module.exports = server;

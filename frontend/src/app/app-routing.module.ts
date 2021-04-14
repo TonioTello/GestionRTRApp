@@ -9,6 +9,8 @@ import { CrearServicioComponent } from './pages/crear-servicio/crear-servicio.co
 import { RegistrarEquipoComponent } from './pages/registrar-equipo/registrar-equipo.component';
 import { StockEquiposComponent } from './pages/stock-equipos/stock-equipos.component';
 import { RegistrarVentaComponent } from './pages/registrar-venta/registrar-venta.component';
+import { ListaClientesComponent } from './pages/lista-clientes/lista-clientes.component';
+
 
 
 
@@ -22,6 +24,7 @@ const routes: Routes = [
   { path: 'registrar-equipo', component: RegistrarEquipoComponent },
   { path: 'stock-equipo', component: StockEquiposComponent },
   { path: 'registrar-venta', component: RegistrarVentaComponent },
+  { path: 'app-lista-clientes', component: ListaClientesComponent },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' }

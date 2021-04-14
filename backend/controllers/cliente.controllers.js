@@ -10,7 +10,7 @@ clienteCtrl.pruebas = async (req, res) => {
 	});
 }
 
-clienteCtrl.getCliente = async( req , res ) =>{
+clienteCtrl.getClientes = async( req , res ) =>{
     const cliente = await Cliente.find();
     res.json(cliente);   
 };
@@ -23,13 +23,16 @@ clienteCtrl.saveCliente = async ( req , res ) =>{
 
     const cliente = new Cliente ({
         nit: params.nit,
-        nombre: params.nombre,
-        apellido: params.apellido,
+        nombreRepresentante: params.nombreRepresentante,
+        nombreContacto: params.nombreContacto,
         empresa: params.empresa,
         ciudad: params.ciudad,
-        telefono: params.telefono,
-        email: params.email,
-        direccion: params.direccion
+        telefono1: params.telefono1,
+        email1: params.email1,
+        telefono2: params.telefono2,
+        email2: params.email2,
+        direccion: params.direccion,
+        observaciones: params.observaciones
 
     });
 
@@ -43,6 +46,22 @@ clienteCtrl.saveCliente = async ( req , res ) =>{
         await cliente.save();    
         res.json(cliente);   
     }  
+
+};
+
+clienteCtrl.searchCliente = async( req , res ) =>{    
+
+    const query = await Cliente.findOne({ 'nit': req.body. nit});
+    
+    console.log(query);
+
+    //query = query.nit.trim;
+    
+    if(query){                       
+        res.status(200).send(query);       }        
+    else {
+        res.status(404).send({message:'Cliente no se encuentra registrado. Registrarlo e intentar nuevamente'});
+    }            
 
 };
 

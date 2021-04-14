@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import {MatAccordion} from '@angular/material/expansion';
 
 @Component({
@@ -9,7 +9,7 @@ import {MatAccordion} from '@angular/material/expansion';
 export class HomeComponent implements OnInit {
 
   @ViewChild(MatAccordion) accordion: any;
-  selectedTabview = 0;
+  @Input() selectedTabview = 0;
 
   constructor() { }
 
@@ -18,6 +18,10 @@ export class HomeComponent implements OnInit {
 
   onHome(){
     this.selectedTabview = 0;
+  }
+
+  changeTabviewEvent(value: string){    // Go to home from a child component
+    this.selectedTabview = Number(value);
   }
 
   onCrearServicio() {
@@ -38,6 +42,10 @@ export class HomeComponent implements OnInit {
 
   onRegistrarCliente() {
     this.selectedTabview = 5;
+  }
+
+  onListaClientes(){
+    this.selectedTabview = 15;
   }
 
   onRegistrarVenta() {

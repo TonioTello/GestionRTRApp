@@ -45,6 +45,7 @@
               </mat-panel-title>
             </mat-expansion-panel-header>
             <p><a (click)="onRegistrarCliente()"><i class="fa fa-fw fa-connectdevelop"></i> Registrar Cliente</a></p>
+            <p><a (click)="onListaClientes()"><i class="fa fa-fw fa-bars"></i> Lista Clientes</a></p>
           </mat-expansion-panel>
         </li>
 
@@ -52,11 +53,11 @@
           <mat-expansion-panel >
             <mat-expansion-panel-header>
               <mat-panel-title>
-                <p><i class="fa fa-fw fa-money"></i>Ventas</p>
+                <p><i class="fa fa-fw fa-money"></i> Ventas</p>
               </mat-panel-title>
             </mat-expansion-panel-header>
             <p><a (click)="onRegistrarVenta()"><i class="fa fa-fw fa-pencil-square-o"></i> Registrar venta</a></p>
-            <p><a (click)="onHistorialVentas()"><i class="fa fa-fw fa-archive"></i> Historial ventas</a></p>
+            <p style="margin-bottom : 50px;"><a (click)="onHistorialVentas()"><i class="fa fa-fw fa-archive"></i> Historial ventas</a></p>
           </mat-expansion-panel>
         </li>
 
@@ -98,22 +99,25 @@
 
       </div>
       <div *ngIf="selectedTabview == 1" class="right_content" style="background-color:#ddd;">
-        <app-crear-servicio></app-crear-servicio>
+        <app-crear-servicio (goHomeEvent)="changeTabviewEvent($event)"></app-crear-servicio>
       </div>
       <div *ngIf="selectedTabview == 2" class="right_content" style="background-color:#ddd;">
         <app-cronograma></app-cronograma>
       </div>
       <div *ngIf="selectedTabview == 3" class="right_content" style="background-color:#ddd;">
-        <app-registrar-equipo></app-registrar-equipo>
+        <app-registrar-equipo (goHomeEvent)="changeTabviewEvent($event)"></app-registrar-equipo>
       </div>
       <div *ngIf="selectedTabview == 4" class="right_content" style="background-color:#ddd;">
         <app-stock-equipos></app-stock-equipos>
       </div>
       <div *ngIf="selectedTabview == 5" class="right_content" style="background-color:#ddd;">
-        <app-registrar-cliente></app-registrar-cliente>>
+        <app-registrar-cliente (goHomeEvent)="changeTabviewEvent($event)"></app-registrar-cliente>
+      </div>
+      <div *ngIf="selectedTabview == 15" class="right_content" style="background-color:#ddd;">
+        <app-lista-clientes ></app-lista-clientes>
       </div>
       <div *ngIf="selectedTabview == 6" class="right_content" style="background-color:#ddd;">
-        <app-registrar-venta></app-registrar-venta>>
+        <app-registrar-venta (goHomeEvent)="changeTabviewEvent($event)" ></app-registrar-venta>
       </div>
       <div *ngIf="selectedTabview == 7" class="right_content" style="background-color:#ddd;">
         <app-historial-ventas></app-historial-ventas>

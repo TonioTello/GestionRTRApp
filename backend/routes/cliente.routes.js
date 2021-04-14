@@ -10,7 +10,8 @@ let api = express.Router();
 //api.get("/cliente/:subject?", ClienteController.getActivities);
 api.get("/cliente-prueba", ClienteController.pruebas);
 api.post("/registrar", ClienteController.saveCliente);
-api.get("/obtener", ClienteController.getCliente);
+api.get("/obtener", ClienteController.getClientes);
+api.post("/buscar", ClienteController.searchCliente);
 
 
 module.exports = api;
