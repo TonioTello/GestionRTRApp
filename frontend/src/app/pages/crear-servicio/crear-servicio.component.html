@@ -78,7 +78,7 @@
   <h4 *ngIf="equipoExiste">Información del servicio</h4>
   <div class="col-12">  <!--imprime una nueva linea¡? -->
   </div>
-  <div *ngIf="equipoExiste" class="col-md-3">
+  <div *ngIf="equipoExiste" class="col-md-4">
     <label for="fechaServicio" class="form-label">Fecha de servicio</label>
     <br>
     <mat-form-field appearance="fill">
@@ -89,20 +89,25 @@
     <!-- #enddocregion toggle -->
     </mat-form-field>
   </div>
-  <div *ngIf="equipoExiste" class="col-md-3">
+  <div *ngIf="equipoExiste" class="col-md-4">
     <label for="tipoServicio" class="form-label">Tipo de servicio</label>
     <br>
     <mat-form-field appearance="fill">
       <!-- <mat-label>Tipo de servicio</mat-label> -->
       <mat-select #tipoServicio="ngModel" name="tipoServicio" [(ngModel)]="servicio.tipoServicio" [(value)]="selected">
-        <mat-option servicio.tipoServicio="option1">Revisión o diagnóstico</mat-option>
-        <mat-option servicio.tipoServicio="option2">Mantenimiento preventivo</mat-option>
-        <mat-option vaservicio.tipoServiciolue="option3">Mantenimiento correctivo</mat-option>
-        <mat-option servicio.tipoServicio="option4">Capacitación</mat-option>
+        <mat-option value="option1">Revisión o diagnóstico</mat-option>
+        <mat-option value="option2">Mantenimiento preventivo</mat-option>
+        <mat-option value="option3">Mantenimiento correctivo</mat-option>
+        <mat-option value="option4">Capacitación</mat-option>
       </mat-select>
     </mat-form-field>
   </div>
-  <div *ngIf="equipoExiste" class="col-md-6"> <!--imprime 3 bloque vacio? -->
+  <div *ngIf="equipoExiste" class="col-md-4"> <!--imprime 3 bloque vacio? -->
+    <label for="inputEmail4" class="form-label">Numero de Orden</label>
+    <input type="email" #numeroOrden="ngModel" name="numeroOrden" [(ngModel)]="servicio.numeroOrden" class="form-control" id="numeroOrden" placeholder="Numero de Orden">
+  </div>
+
+  <div *ngIf="equipoExiste" class="col-md-12"> <!--imprime 3 bloque vacio? -->
     <label for="inputEmail4" class="form-label">Observaciones</label>
     <input type="email" #observaciones="ngModel" name="observaciones" [(ngModel)]="servicio.observaciones" class="form-control" id="observaciones" placeholder="Observaciones">
   </div>

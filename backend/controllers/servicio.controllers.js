@@ -40,7 +40,7 @@ servicioCtrl.saveServicio = async ( req , res ) =>{
         equipo: params.equipo
     });
 
-/*     const query = await Servicio.findOne({ 'numeroOrden': req.body. numeroOrden});
+    const query = await Servicio.findOne({ 'numeroOrden': req.body. numeroOrden});
     console.log(query);
     
     if(query){                       
@@ -49,9 +49,8 @@ servicioCtrl.saveServicio = async ( req , res ) =>{
     else {
         await servicio.save();    
         res.json(servicio);   
-    }   */
+    }   
 
-    await servicio.save();   // Se valida numero de orden reptida en la actulizacion
 
 
 };
