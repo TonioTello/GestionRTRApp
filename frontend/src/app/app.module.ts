@@ -20,6 +20,7 @@ import { HistorialVentasComponent } from './pages/historial-ventas/historial-ven
 import { RegistrarClienteComponent } from './pages/registrar-cliente/registrar-cliente.component';
 import { CronogramaComponent } from './pages/cronograma/cronograma.component';
 import { ListaClientesComponent } from './pages/lista-clientes/lista-clientes.component';
+import { RegistrarUsuariosComponent } from './pages/registrar-usuarios/registrar-usuarios.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ListaClientesComponent } from './pages/lista-clientes/lista-clientes.co
     HistorialVentasComponent,
     RegistrarClienteComponent,
     CronogramaComponent,
-    ListaClientesComponent
+    ListaClientesComponent,
+    RegistrarUsuariosComponent
   ],
   imports: [
     BrowserModule,

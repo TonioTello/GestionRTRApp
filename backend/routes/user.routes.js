@@ -10,7 +10,7 @@ let api = express.Router();
 //api.get("/user/:subject?", UserController.getActivities);
 api.get("/user-prueba", UserController.pruebas);
 api.post("/registrar", UserController.saveUser);
-api.post("/iniciar-sesion", UserController.logingUser);
+api.post("/login", UserController.logingUser);
 api.get("/obtener", UserController.getUser);
 
 

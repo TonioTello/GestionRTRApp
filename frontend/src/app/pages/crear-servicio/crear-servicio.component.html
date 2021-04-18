@@ -28,6 +28,8 @@
   </div>
 
   <div class="col-md-6">
+    <label class="form-label">Nombre Empresa</label>
+    <input type="email" #empresa="ngModel" name="empresa" [(ngModel)]="cliente_found.empresa" class="form-control" id="empresa" placeholder="Empresa" disabled>
     <label class="form-label">Ciudad</label>
     <input type="email" #ciudad="ngModel" name="ciudad" [(ngModel)]="cliente_found.ciudad" class="form-control" id="ciudadCliente" placeholder="Ciudad" disabled>
     <label class="form-label">Dirección</label>

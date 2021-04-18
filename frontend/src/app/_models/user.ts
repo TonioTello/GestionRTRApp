@@ -1,19 +1,22 @@
 export class User {
 
-  constructor (  id = 0, username = ' ', password = ' ', firstName = ' ', lastName = ' ', token = ' ' ){
-    this.id = id;
-    this.username = username;
-    this.password = password;
-    this.firstName = firstName;
-    this.password = password;
-    this.lastName = lastName;
-    this.token = token;
+    constructor (  id = 0, nombre = ' ', apellido = ' ', email = ' ', password = ' ', cargo = ' ',  rol = ' ' ){
+      this.id = id;
+      this.nombre = nombre;
+      this.apellido = apellido;
+      this.email = email;
+      this.password = password;
+      this.cargo = apellido;
+      this.rol = rol;
+  }
+
+    id: number;
+    nombre: string;
+    apellido: string;
+    email: string;
+    password: string;
+    cargo: string;
+    rol: string;
+
 }
 
-  id: number;
-  username: string;
-  password: string;
-  firstName: string;
-  lastName: string;
-  token: string;
-}
