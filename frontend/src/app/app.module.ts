@@ -18,7 +18,7 @@ import { StockEquiposComponent } from './pages/stock-equipos/stock-equipos.compo
 import { RegistrarVentaComponent } from './pages/registrar-venta/registrar-venta.component';
 import { HistorialVentasComponent } from './pages/historial-ventas/historial-ventas.component';
 import { RegistrarClienteComponent } from './pages/registrar-cliente/registrar-cliente.component';
-import { CronogramaComponent } from './pages/cronograma/cronograma.component';
+import { CronogramaComponent, DialogOverviewExampleDialog } from './pages/cronograma/cronograma.component';
 import { ListaClientesComponent } from './pages/lista-clientes/lista-clientes.component';
 import { RegistrarUsuariosComponent } from './pages/registrar-usuarios/registrar-usuarios.component';
 
@@ -36,6 +36,7 @@ import { RegistrarUsuariosComponent } from './pages/registrar-usuarios/registrar
     HistorialVentasComponent,
     RegistrarClienteComponent,
     CronogramaComponent,
+    DialogOverviewExampleDialog,
     ListaClientesComponent,
     RegistrarUsuariosComponent
   ],
@@ -48,6 +49,7 @@ import { RegistrarUsuariosComponent } from './pages/registrar-usuarios/registrar
     BrowserAnimationsModule,
     MaterialModule
   ],
+  entryComponents:[CronogramaComponent, DialogOverviewExampleDialog],
   providers: [],
   bootstrap: [AppComponent]
 })

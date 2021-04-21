@@ -12,5 +12,6 @@ api.get("/servicio-prueba", ServicioController.pruebas);
 api.post("/registrar", ServicioController.saveServicio);
 api.get("/obtener", ServicioController.getServicios);
 api.post("/buscar", ServicioController.searchServicio);
+api.put("/actualizar", ServicioController.updateServicio);
 
 module.exports = api;

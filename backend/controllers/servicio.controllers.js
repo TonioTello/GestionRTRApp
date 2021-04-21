@@ -55,6 +55,36 @@ servicioCtrl.saveServicio = async ( req , res ) =>{
 
 };
 
+
+servicioCtrl.updateServicio = async ( req , res ) =>{
+
+	console.log("Hola actualizar Servicio");
+	const params = req.body;
+	console.log(params);
+    const _id = params._id;
+	console.log("Id: " + _id);
+
+    console.log("Antes de Reporte de servicio actualizado");
+    await Servicio.updateOne( {_id: req.body._id}, 
+        { $set: {
+            quienEjecuta: params.quienEjecuta,
+            estadoFisico: params.estadoFisico,
+            estadoFuncional: params.estadoFuncional,
+            tiempoEjecucion: params.tiempoEjecucion,
+            estado: params.estado,
+            observaciones: params.observaciones
+        }} , 
+        {new : true}); 
+    
+    const query = await Servicio.findOne({ '_id': req.body._id});
+    console.log(query);
+    
+    console.log("Reporte de servicio actualizado");
+    console.log(query);
+    res.status(200).send(query);    
+
+};
+
 servicioCtrl.searchServicio = async( req , res ) =>{    
 
     const query = await Servicio.findOne({ 'nit': req.body. nit});

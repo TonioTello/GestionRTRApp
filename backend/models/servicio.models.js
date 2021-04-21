@@ -1,4 +1,7 @@
 const mongoose = require("mongoose");
+
+mongoose.set('useFindAndModify', false);
+
 const { Schema } = mongoose;
 
 const ServicioSchema = new Schema({
